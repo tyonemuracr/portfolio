@@ -3,31 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>架空カフェLP | Sample Coffee</title>
+  <title>Sample Coffee | 架空カフェLP</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="fade-in">
     <h1>Sample Coffee</h1>
-    <nav><a href="#menu">メニュー</a> | <a href="#contact">お問い合わせ</a></nav>
+    <nav>
+      <a href="#concept">コンセプト</a>
+      <a href="#menu">メニュー</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
   </header>
 
-  <section id="hero">
-    <h2>毎日の一杯に、特別な時間を。</h2>
-    <p>厳選豆を使った香り高いコーヒーをお届けします。</p>
-    <button>今すぐ購入</button>
-  </section>
-
-  <section id="menu">
-    <h3>おすすめメニュー</h3>
-    <div class="menu-item">
-      <img src="img/sample1.jpg" alt="ブレンドコーヒー">
-      <p>深煎りブレンド ¥480</p>
+  <section id="hero" class="fade-in">
+    <div class="hero-text">
+      <h2>一杯のコーヒーで、心を満たす時間を。</h2>
+      <p>焙煎から抽出まで、こだわり抜いた一杯をお届けします。</p>
+      <a href="#menu" class="btn">メニューを見る</a>
     </div>
   </section>
 
-  <footer id="contact">
-    <p>お問い合わせはこちら：sample@coffee.jp</p>
+  <section id="concept" class="fade-in">
+    <h3>Concept</h3>
+    <p>Sample Coffeeは、毎日の暮らしに寄り添う小さなカフェ。<br>
+    豆の香り、カップの温もり、ゆったり流れる時間。<br>
+    あなたの「ほっとする瞬間」を大切にしています。</p>
+  </section>
+
+  <section id="menu" class="fade-in">
+    <h3>おすすめメニュー</h3>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="img/sample1.jpg" alt="ブレンドコーヒー">
+        <h4>深煎りブレンド</h4>
+        <p>¥480<br>しっかりとした苦味と香ばしさ。</p>
+      </div>
+      <div class="menu-item">
+        <img src="img/sample2.jpg" alt="ラテ">
+        <h4>カフェラテ</h4>
+        <p>¥520<br>ミルクのまろやかさが心地よい。</p>
+      </div>
+      <div class="menu-item">
+        <img src="img/sample3.jpg" alt="スイーツ">
+        <h4>季節のスイーツ</h4>
+        <p>¥450〜<br>コーヒーに合う手作りデザート。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="fade-in">
+    <h3>お問い合わせ</h3>
+    <p>ご質問・ご予約はこちらまで</p>
+    <p><a href="mailto:sample@coffee.jp" class="mail-link">sample@coffee.jp</a></p>
+    <p class="copy">© 2025 Sample Coffee</p>
   </footer>
+
+  <script>
+    // フェードインアニメーション
+    const fades = document.querySelectorAll('.fade-in');
+    const options = { threshold: 0.2 };
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, options);
+    fades.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
