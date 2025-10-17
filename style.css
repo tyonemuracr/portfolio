@@ -160,12 +160,19 @@ footer {
   transform: translateY(0);
 }
 
-/* メニュー画像のサイズを統一 */
+/* おしゃれカフェサイトによくある「ホバーでふわっと拡大」 */
 .menu-item img {
   width: 100%;
-  height: 200px;         /* 高さを固定（お好みで調整可） */
-  object-fit: cover;     /* 画像をトリミングして均一に見せる */
-  border-radius: 10px;   /* 角を少し丸く（おしゃれ感アップ） */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* ほんのり影をつける */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.menu-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+
 
