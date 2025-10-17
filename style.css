@@ -163,12 +163,12 @@ footer {
 /* 縦横比を保ちながら統一感 */
 .menu-item img {
   width: 100%;
-  height: auto;           /* 高さを自動調整 */
-  aspect-ratio: 4 / 3;    /* 横：縦＝4:3で揃える（自然な横長） */
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 300px; /* 高さをそろえる */
+  object-fit: cover; /* 縦横比を保ちながら中央でトリミング */
+  object-position: center; /* 中央寄せ */
+  border-radius: 12px; /* 角丸があるなら維持 */
 }
+
 
 
 
